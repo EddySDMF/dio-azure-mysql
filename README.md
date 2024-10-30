@@ -1,6 +1,6 @@
 # Criando um Dashboard corporativo com integração com MySQL e Azure
 
-Inicialmente, selecionae o banco de dados <code>azure_company</code>:
+Inicialmente, selecionar o banco de dados <code>azure_company</code>:
 ```
 use azure_company
 ```
