@@ -106,10 +106,30 @@ from employee;
 
 13.	Mescle os nomes de departamentos e localização. Isso fará que cada combinação departamento-local seja único. Isso irá auxiliar na criação do modelo estrela em um módulo futuro.
 ```
+select d.*,
+	   concat(d.Dname, '-', dl.Dlocation) as DepLoc 
+from department d 
+inner join dept_locations dl 
+on d.Dnumber = dl.Dnumber;
+```
 
+14.	Explique por que, neste caso supracitado, podemos apenas utilizar o mesclar e não o atribuir. 
+```
+Para acrescentar colunas é necessario que as tabelas que serão empilhadas tenham os mesmos cabeçalhos, na mesma ordem.
 ```
 
 15.	Agrupe os dados a fim de saber quantos colaboradores existem por gerente
+```
+select concat(e2.Fname, ' ', e2.Lname) as Manager,
+	   count(concat(e2.Fname, ' ', e2.Lname)) as Qtd
+from employee e1 
+inner join employee e2
+on e1.Super_ssn = e2.Ssn
+group by 1;
+```
 
 16.	Elimine as colunas desnecessárias, que não serão usadas no relatório, de cada tabela
-
+```
+alter table employee 
+drop column Minit;
+```
