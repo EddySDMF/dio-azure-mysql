@@ -77,8 +77,7 @@ on e.Dno = d.Dnumber;
 10.	Neste processo elimine as colunas desnecessárias. 
 ```
 select concat(e.Fname, ' ', e.Lname) as Employee,
-	   YEAR(CURDATE()) - YEAR(e.Bdate) - 
-	   (DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(e.Bdate, '%m%d')) as Age,
+	   YEAR(CURDATE()) - YEAR(e.Bdate) as Age,
 	   e.Sex,
 	   d.Dname,
 	   e.Salary,
@@ -92,12 +91,23 @@ on e.Super_Ssn = e2.Ssn;
 
 11.	Realize a junção dos colaboradores e respectivos nomes dos gerentes . Isso pode ser feito com consulta SQL ou pela mescla de tabelas com Power BI. Caso utilize SQL, especifique no README a query utilizada no processo.
 ```
-
+select concat(e.Fname, ' ', e.Lname) as Employee,
+	concat(e2.Fname, ' ', e2.Lname) as Manager
+from employee e
+left join employee e2 
+on e.Super_Ssn = e2.Ssn;
 ```
 
 12.	Mescle as colunas de Nome e Sobrenome para ter apenas uma coluna definindo os nomes dos colaboradores
+```
+select concat(Fname, ' ', Lname) as Employee
+from employee;
+```
 
 13.	Mescle os nomes de departamentos e localização. Isso fará que cada combinação departamento-local seja único. Isso irá auxiliar na criação do modelo estrela em um módulo futuro.
+```
+
+```
 
 15.	Agrupe os dados a fim de saber quantos colaboradores existem por gerente
 
