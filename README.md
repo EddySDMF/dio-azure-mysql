@@ -1,5 +1,8 @@
 # Criando um Dashboard corporativo com integração com MySQL e Azure
 
+**Link do Relatorio:**
+https://app.powerbi.com/view?r=eyJrIjoiODI5ZjI3ZDQtYzA2Zi00NWE0LTliMjAtNzkxYWQ1YWNiOGI4IiwidCI6IjNjNDk3M2VjLTczYjQtNGUxNS1iNWI5LWQxY2Q2Yjc2OGU2OCJ9
+
 Inicialmente, selecionar o banco de dados <code>azure_company</code>:
 ```
 use azure_company
